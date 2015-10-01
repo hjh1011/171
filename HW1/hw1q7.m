@@ -1,0 +1,9 @@
+Xnew=[8, 300, 180, 3500, 9, 80, 1];
+[MSE,Wols]=hw1q5f(indv,indv,mpg,mpg,2);
+mpgnew=[1,Xnew,Xnew.^2]*Wols
+theta=GDlogit(indv,islow,120000,0.0001);
+plow=1/(1+exp(-[1,Xnew]*theta))
+theta=GDlogit(indv,ismedium,120000,0.0001);
+pmedium=1/(1+exp(-[1,Xnew]*theta))
+theta=GDlogit(indv,ishigh,120000,0.0001);
+phigh=1/(1+exp(-[1,Xnew]*theta))
